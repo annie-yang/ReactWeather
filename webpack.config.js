@@ -11,8 +11,13 @@ module.exports = {
 	// no extensions, .js, or .jsx
 	resolve: {
 		root: __dirname,
+		// easy to root name
 		alias: {
-			Main: 'app/components/Main.jsx'
+			Main: 'app/components/Main.jsx',
+			Nav: 'app/components/Nav.jsx',
+			Weather: 'app/components/Weather.jsx',
+			About: 'app/components/About.jsx',
+			Examples: 'app/components/Examples.jsx'
 		},
 		extensions: ['', '.js', '.jsx']
 		},

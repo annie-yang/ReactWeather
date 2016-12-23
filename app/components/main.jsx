@@ -1,9 +1,16 @@
 var React = require('react');
+var Nav = require('Nav');
+var About = require('About');
+var Examples = require('Examples');
 
 var Main = React.createClass({
 	render:function(){
 		return(
-			<h2>Main Component</h2>
+			<div>
+				<Nav/>
+				<h2>Main Component</h2>
+				{this.props.children}
+			</div>
 		);
 	}
 });
