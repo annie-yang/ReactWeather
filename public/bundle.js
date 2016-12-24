@@ -24898,7 +24898,13 @@
 	// creates link router for nav bar
 
 	var _require = __webpack_require__(159),
-	    Link = _require.Link;
+	    Link = _require.Link,
+	    IndexLink = _require.IndexLink;
+
+	// differentiate which links are active
+	// 'IndexLink' makes sure the main link is not bold when other active links are clicked (since the path 'to="/"' is always active in main link)
+	// 'activeClassName' makes the certain links active when clicked
+
 
 	var Nav = React.createClass({
 		displayName: 'Nav',
@@ -24913,18 +24919,18 @@
 					'Nav Component'
 				),
 				React.createElement(
-					Link,
-					{ to: '/' },
+					IndexLink,
+					{ to: '/', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
 					'Get Weather'
 				),
 				React.createElement(
 					Link,
-					{ to: '/about' },
+					{ to: '/about', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
 					'About'
 				),
 				React.createElement(
 					Link,
-					{ to: '/examples' },
+					{ to: '/examples', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
 					'Examples'
 				)
 			);
