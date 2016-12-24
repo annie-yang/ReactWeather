@@ -24990,20 +24990,129 @@
 	'use strict';
 
 	var React = __webpack_require__(1);
+	var WeatherForm = __webpack_require__(221);
+	var WeatherMessage = __webpack_require__(222);
 
 	var Weather = React.createClass({
 		displayName: 'Weather',
 
+		// default (when user goes to page)
+		getInitialState: function getInitialState() {
+			return {
+				location: 'Miami',
+				temp: 88
+			};
+		},
+		// parent function
+		// grabing data from input field and displaying in parent field
+		handleSearch: function handleSearch(location) {
+			// take objects of attributes we want to set
+			this.setState({
+				location: location,
+				temp: 23
+			});
+		},
+		// renders temp and location into the screen
 		render: function render() {
+			var _state = this.state,
+			    temp = _state.temp,
+			    location = _state.location;
+
+
 			return React.createElement(
-				'h3',
+				'div',
 				null,
-				' Weather Component'
+				React.createElement(
+					'h3',
+					null,
+					' Weather Component'
+				),
+				React.createElement(WeatherForm, { onSearch: this.handleSearch }),
+				React.createElement(WeatherMessage, { temp: temp, location: location })
 			);
 		}
 	});
 
 	module.exports = Weather;
+
+/***/ },
+/* 221 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	// load library
+	var React = __webpack_require__(1);
+
+	var WeatherForm = React.createClass({
+		displayName: 'WeatherForm',
+
+		//this function will get called when the user clicks 'Get Weather' button
+		// 'e' is event that passes onto 'onFormSubmit'
+		onFormSubmit: function onFormSubmit(e) {
+			e.preventDefault(); // prevent entire page from reloading
+
+			// grab the data from the input text field and set to variable location (input is referenced from location in input field)
+			var location = this.refs.location.value;
+
+			// if valid location
+			if (location.length > 0) {
+				// clear value in browser/input field
+				this.refs.location.value = '';
+
+				// pass in the location the user searched for
+				this.props.onSearch(location);
+			}
+		},
+		render: function render() {
+			return React.createElement(
+				'div',
+				null,
+				React.createElement(
+					'form',
+					{ onSubmit: this.onFormSubmit },
+					React.createElement('input', { type: 'text', ref: 'location' }),
+					React.createElement(
+						'button',
+						null,
+						'Get Weather'
+					)
+				)
+			);
+		}
+	});
+
+	module.exports = WeatherForm;
+
+/***/ },
+/* 222 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+
+	var WeatherMessage = React.createClass({
+		displayName: 'WeatherMessage',
+
+		render: function render() {
+			var _props = this.props,
+			    temp = _props.temp,
+			    location = _props.location;
+
+
+			return React.createElement(
+				'h3',
+				null,
+				' It is ',
+				temp,
+				'\xBAF in ',
+				location
+			);
+		}
+	});
+
+	module.exports = WeatherMessage;
 
 /***/ }
 /******/ ]);
