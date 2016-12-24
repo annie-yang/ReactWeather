@@ -39,5 +39,7 @@ module.exports = {
 			test: /\.jsx?$/,
 			exclude: /(node_modules|bower_components)/
 		}]
-	}
+	},
+	// create source maps for debugging purposes only
+	devtool: 'cheap-module-eval-source-map'
 };
