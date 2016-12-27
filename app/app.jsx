@@ -10,6 +10,11 @@ var Weather = require('Weather');
 var About = require('About');
 var Examples = require('Examples');
 
+// load foundation
+// 'css!' is a css loader
+require('style!css!foundation-sites/dist/foundation.min.css')
+$(document).foundation();
+
 ReactDOM.render(
 	//router library
 	// 'Main' component always gets rendered due to matching the route path
