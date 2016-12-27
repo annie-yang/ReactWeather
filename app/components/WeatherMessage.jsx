@@ -4,7 +4,7 @@ var React = require('react');
 // can use stateless function because they only define the render method and don't maintain any state
 var WeatherMessage = ({temp, location}) => {
 	return(
-		<h3> It is {temp}ºF in {location}</h3>
+		<h3 className="text-center"> It is {temp}ºF in {location}</h3>
 	)
 };
 
