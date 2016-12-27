@@ -4,7 +4,10 @@ var React = require('react');
 // can use stateless function because they only define the render method and don't maintain any state
 var Examples = (props) => {
 	return(
-		<h3>Examples Component</h3>
+		<div>
+			<h3>Examples</h3>
+			<p>Welcome to examples page!</p>
+		</div>
 	)
 }
 
