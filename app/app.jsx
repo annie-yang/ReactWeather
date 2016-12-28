@@ -15,6 +15,9 @@ var Examples = require('Examples');
 require('style!css!foundation-sites/dist/foundation.min.css')
 $(document).foundation();
 
+// app css
+require('style!css!applicationStyles')
+
 ReactDOM.render(
 	//router library
 	// 'Main' component always gets rendered due to matching the route path
