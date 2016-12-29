@@ -1,9 +1,0 @@
-.page-title{
-	margin-top: 2.5rem;
-	margin-bottom: 2.5rem;
-}
-
-/* select all inputs where type is equal to search */
-input[type=search] {
-	box-shadow: none;
-}

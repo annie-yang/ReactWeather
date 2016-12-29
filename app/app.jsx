@@ -12,11 +12,12 @@ var Examples = require('Examples');
 
 // load foundation
 // 'css!' is a css loader
+//require('./node_modules_folder/foundation-sites/dist/foundation.js');
 require('style!css!foundation-sites/dist/foundation.min.css')
 $(document).foundation();
 
 // app css
-require('style!css!applicationStyles')
+require('style!css!sass!applicationStyles')
 
 ReactDOM.render(
 	//router library

@@ -12,7 +12,8 @@ module.exports = {
 	],
 	// provide set of key value pairs, where key is module name and value is variable name we want available in external script files
 	externals: {
-		jquery: 'jQuery'
+		jquery: 'jQuery',
+		foundation: 'Foundation'
 	},
 	// create new provide plugin
 	// have webpack look at which variable names to look for
@@ -44,7 +45,7 @@ module.exports = {
 			WeatherMessage: 'app/components/WeatherMessage.jsx',
 			OpenWeatherMap: 'app/api/OpenWeatherMap.jsx',
 			ErrorModal: 'app/components/ErrorModal.jsx',
-			applicationStyles: 'app/styles/app.css'
+			applicationStyles: 'app/styles/app.scss'
 		},
 		extensions: ['', '.js', '.jsx']
 		},
