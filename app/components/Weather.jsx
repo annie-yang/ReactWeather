@@ -17,10 +17,12 @@ var Weather = React.createClass({
 		handleSearch:function(location){
 			var that = this;
 
-			// when someone starts search, loading is set to true
 			this.setState({
-				isLoading:true,
-				errorMessage: undefined
+				isLoading:true, // when someone starts search, loading is set to true
+				errorMessage: undefined,
+				// clears out location and temp to clean up data once search has been found
+				location: undefined,
+				temp: undefined
 			});
 
 			// take objects of attributes we want to set
@@ -37,6 +39,27 @@ var Weather = React.createClass({
 					errorMessage: e.message
 				});
 			});
+	},
+	componentDidMount: function(){
+		var location = this.props.location.query.location;
+
+		// if there is a location and the location value is more than just an empty string
+		if(location && location.length > 0){
+			// use 'handleSearch' to pass in the location
+			this.handleSearch(location);
+
+			// remove after location has been successfully searched for
+			// '#/' is the root of our location
+			window.location.hash = '#/';
+		}
+	},
+	componentWillReceiveProps: function(newProps){
+		var location = newProps.location.query.location;
+
+		if(location && location.length > 0){
+			this.handleSearch(location);
+			window.location.hash = '#/';
+		}
 	},
 	// renders temp and location into the screen
 	render:function(){
