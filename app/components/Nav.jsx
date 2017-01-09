@@ -3,9 +3,6 @@ var React = require('react');
 // creates link router for nav bar
 var {Link, IndexLink} = require('react-router');
 
-// differentiate which links are active
-// 'IndexLink' makes sure the main link is not bold when other active links are clicked (since the path 'to="/"' is always active in main link)
-// 'activeClassName' makes the certain links active when clicked
 var Nav = React.createClass({
 	onSearch: function(e){
 		e.preventDefault();
@@ -23,6 +20,9 @@ var Nav = React.createClass({
 			window.location.hash = '#/?location=' + encodedLocation;
 		}
 	},
+	// differentiate which links are active
+	// 'IndexLink' makes sure the main link is not bold when other active links are clicked (since the path 'to="/"' is always active in main link)
+	// 'activeClassName' makes the certain links active when clicked
 	render:function(){
 		return(
 			<div className="top-bar">

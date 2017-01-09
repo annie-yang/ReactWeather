@@ -1,4 +1,7 @@
+// require all libraries used
 var React = require('react');
+
+// components
 var Nav = require('Nav');
 var About = require('About');
 var Examples = require('Examples');

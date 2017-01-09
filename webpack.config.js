@@ -35,6 +35,7 @@ module.exports = {
 	resolve: {
 		root: __dirname,
 		// easy to root name
+		// name our modules
 		alias: {
 			Main: 'app/components/Main.jsx',
 			Nav: 'app/components/Nav.jsx',
