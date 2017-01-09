@@ -1,4 +1,4 @@
-// require all libraries used
+// require library
 var React = require('react');
 
 // components

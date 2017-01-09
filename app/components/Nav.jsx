@@ -1,13 +1,14 @@
+// require library
 var React = require('react');
 
 // creates link router for nav bar
 var {Link, IndexLink} = require('react-router');
 
 var Nav = React.createClass({
-	onSearch: function(e){
-		e.preventDefault();
+	onSearch: function(e){ // 'e' is event handler
+		e.preventDefault(); // prevent page from refreshing
 
-		var location = this.refs.search.value;
+		var location = this.refs.search.value; // grabbing 'location' value
 
 		// encodes location
 		var encodedLocation = encodeURIComponent(location);
@@ -20,9 +21,10 @@ var Nav = React.createClass({
 			window.location.hash = '#/?location=' + encodedLocation;
 		}
 	},
-	// differentiate which links are active
-	// 'IndexLink' makes sure the main link is not bold when other active links are clicked (since the path 'to="/"' is always active in main link)
-	// 'activeClassName' makes the certain links active when clicked
+	/*
+		'IndexLink' makes sure the main link is not bold when other active links are clicked (since the path 'to="/"' is always active in main link)
+		'activeClassName' makes the certain links active when clicked
+	*/
 	render:function(){
 		return(
 			<div className="top-bar">

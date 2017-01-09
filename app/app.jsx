@@ -1,9 +1,8 @@
+// require libraries
 var React = require('react');
 var ReactDOM = require('react-dom');
 
-// creates new variable and access the route property
-// react-router library
-// object destructuring
+// 'react-router' library
 var {Route, Router, IndexRoute, hashHistory} = require('react-router');
 
 //components
@@ -12,23 +11,23 @@ var Weather = require('Weather');
 var About = require('About');
 var Examples = require('Examples');
 
-// load foundation
-// 'css!' is a css loader
-//require('./node_modules_folder/foundation-sites/dist/foundation.js');
+/*
+	loader foundation
+	EX: 'css!' is a css loader
+*/
 require('style!css!foundation-sites/dist/foundation.min.css')
 $(document).foundation();
 
-// app css
+// load sass
 require('style!css!sass!applicationStyles')
 
 ReactDOM.render(
-	// react-router library
-	// define individual routers
-	// 'component' renders every single page
-	// 'Main' component always gets rendered due to matching the root path
-	// hashHistory uses '#' followed by route
-	// 'IndexRoute' if the path doesn't recognize other links, then go to the index route path within the 'Main' component
-	// 'Router' needs to know which tracking it needs to do
+	/*
+		'react-router' library defines individual routers
+		'Router' needs to know which tracking it needs to do
+		'component' renders every single page
+		'IndexRoute' if the path doesn't recognize other links, then go to the index route
+	*/
 	<Router history={hashHistory}>
 		  <Route path="/" component={Main}>
 			<Route path="about" component={About}></Route>
