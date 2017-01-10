@@ -1,10 +1,10 @@
 // load library
 var React = require('react');
 
+// check location to make sure it's valid, and if it is, call the parent onSearch function (in this case: handleSearch is the parent function)
 var WeatherForm = React.createClass({
-	//this function will get called when the user clicks 'Get Weather' button
-	// 'e' is event that passes onto 'onFormSubmit'
-	onFormSubmit: function(e){
+	// this function will get called when the user clicks 'Get Weather' button
+	onFormSubmit: function(e){ 	// 'e' is event that passes onto 'onFormSubmit'
 		e.preventDefault(); // prevent entire page from reloading
 
 		// grab the data from the input text field and set to variable location (input is referenced from location in input field)

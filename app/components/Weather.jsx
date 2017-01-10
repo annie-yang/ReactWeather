@@ -13,10 +13,11 @@ var Weather = React.createClass({
 			}
 		},
 		// parent function
-		// grabing data from input field and displaying in parent field
+		// grabing data from input field (in this case 'onSearch') and displaying in parent field
 		handleSearch:function(location){
 			var that = this;
 
+			// takes objects of attributes we want to set
 			this.setState({
 				isLoading:true, // when someone starts search, loading is set to true
 				errorMessage: undefined,
@@ -61,8 +62,8 @@ var Weather = React.createClass({
 			window.location.hash = '#/';
 		}
 	},
-	// renders temp and location into the screen
 	render:function(){
+		// pass into WeatherMessage as props and renders into screen
 		var {isLoading, temp, location, errorMessage} = this.state;
 
 		function renderMessage(){
