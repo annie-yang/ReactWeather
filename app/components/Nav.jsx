@@ -1,7 +1,11 @@
 // require library
 var React = require('react');
 
-// creates link router for nav bar
+/*
+	'Link' easily switch pages between links for nav
+	'IndexLink' prevents multiple pages from being active
+		EX: bold
+*/
 var {Link, IndexLink} = require('react-router');
 
 var Nav = React.createClass({
@@ -22,8 +26,11 @@ var Nav = React.createClass({
 		}
 	},
 	/*
+		Link tag allows custom styles and classes to the link
 		'IndexLink' makes sure the main link is not bold when other active links are clicked (since the path 'to="/"' is always active in main link)
 		'activeClassName' makes the certain links active when clicked
+		'activeStyle' styles the links
+			'fontWeight' bolds the links when clicked
 	*/
 	render:function(){
 		return(

@@ -5,7 +5,7 @@ var ReactDOM = require('react-dom');
 // 'react-router' library
 var {Route, Router, IndexRoute, hashHistory} = require('react-router');
 
-//components
+// load in components
 var Main = require('Main');
 var Weather = require('Weather');
 var About = require('About');
@@ -27,6 +27,9 @@ ReactDOM.render(
 		'Router' needs to know which tracking it needs to do
 		'component' renders every single page
 		'IndexRoute' if the path doesn't recognize other links, then go to the index route
+			Want to link to page using 'IndexLink' to prevent multiple pages from being labeled as active
+		'Main' component is always going to be rendered
+		'hashHistory' will contain a # followed by the component in the URL
 	*/
 	<Router history={hashHistory}>
 		  <Route path="/" component={Main}>
