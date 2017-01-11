@@ -66,6 +66,6 @@ module.exports = {
 			exclude: /(node_modules|bower_components)/
 		}]
 	},
-	// create source maps for debugging purposes only
+	// create source maps for debugging purposes only to where the browser understands
 	devtool: 'cheap-module-eval-source-map'
 };
