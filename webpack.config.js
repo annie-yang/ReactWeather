@@ -1,10 +1,12 @@
-// loading webpack utilities
+// load webpack utilities
 var webpack = require('webpack');
 
 module.exports = {
-	// where to start
-	// loading in paths of jquery, foundation, and original path
-	// use script loader (scipt!)
+	/*
+		starting point
+		use script loader to properly package for webpack
+		array that loads jquery, css foundation, and original path
+	*/
 	entry: [
 		'script!jquery/dist/jquery.min.js',
 		'script!foundation-sites/dist/foundation.min.js',
@@ -12,12 +14,14 @@ module.exports = {
 	],
 	// provide set of key value pairs, where key is module name and value is variable name we want available in external script files
 	externals: {
-		jquery: 'jQuery',
+		jquery: 'jQuery', // let foundation properly attach its methods to jQuery object
 		foundation: 'Foundation'
 	},
-	// create new provide plugin
-	// have webpack look at which variable names to look for
-	// takes in object of key value pairs, the key is variable name to watch for (in this case: '$' and 'jQuery') and value is module to replace it with (in this case: 'jquery')
+	/*
+		create new provide plugin
+		have webpack look at which variable names to look for
+		takes in object of key value pairs, the key is variable name to watch for (in this case: '$' and 'jQuery') and value is module to replace it with (in this case: 'jquery')
+	*/
 	plugins: [
 		new webpack.ProvidePlugin({
 			'$': 'jquery',

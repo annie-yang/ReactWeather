@@ -1,8 +1,12 @@
 var React = require('react');
+
+// Need to include react-router, since added 'Link' component
 var {Link} = require('react-router');
 
-// stateless function since this simple component only renders to screen
-// can use stateless function because they only define the render method and don't maintain any state
+/*
+	stateless function, since this simple component only renders to screen
+	only defines the render method and don't maintain any state
+*/
 var Examples = (props) => {
 	return(
 		<div>
@@ -13,7 +17,7 @@ var Examples = (props) => {
 					<Link to='/?location=Salinas'>Salinas, CA</Link>
 				</li>
 				<li>
-					<Link to='/?location=SanFrancisco'>San Francisco, CA</Link>
+					<Link to='/?location=San Francisco'>San Francisco, CA</Link>
 				</li>
 			</ol>
 		</div>

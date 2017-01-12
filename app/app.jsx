@@ -13,9 +13,12 @@ var Examples = require('Examples');
 
 /*
 	loader foundation
-	EX: 'css!' is a css loader
+	styles actually show up: style!
+	inject css: css!
 */
 require('style!css!foundation-sites/dist/foundation.min.css')
+
+// select document and call foundation to show
 $(document).foundation();
 
 // load sass
