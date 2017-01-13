@@ -49,6 +49,7 @@ var Weather = React.createClass({
 			});
 	},
 	componentDidMount: function(){
+		// property is location with another object with query location
 		var location = this.props.location.query.location;
 
 		// if there is a location and the location value is more than just an empty string
@@ -56,12 +57,21 @@ var Weather = React.createClass({
 			// use 'handleSearch' to pass in the location
 			this.handleSearch(location);
 
-			// remove after location has been successfully searched for
-			// '#/' is the root of our location
+			/*
+				removes location query string after it has been successfully searched for (clears out URL string)
+				goes back to the '#/' (root of our location)
+			*/
 			window.location.hash = '#/';
 		}
 	},
+	/*
+		component capture changes to props
+		parent can always update child props
+		automatically update props of weather.jsx when the URL changes
+		listen to changes
+	*/
 	componentWillReceiveProps: function(newProps){
+		// pull off the updated location
 		var location = newProps.location.query.location;
 
 		if(location && location.length > 0){

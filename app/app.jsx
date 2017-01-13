@@ -21,7 +21,7 @@ require('style!css!foundation-sites/dist/foundation.min.css')
 // select document and call foundation to show
 $(document).foundation();
 
-// load sass
+// properly process the code
 require('style!css!sass!applicationStyles')
 
 ReactDOM.render(

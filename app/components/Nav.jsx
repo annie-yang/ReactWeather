@@ -9,19 +9,23 @@ var React = require('react');
 var {Link, IndexLink} = require('react-router');
 
 var Nav = React.createClass({
+	//search function for the search bar in navigation
 	onSearch: function(e){ // 'e' is event handler
 		e.preventDefault(); // prevent page from refreshing
 
 		var location = this.refs.search.value; // grabbing 'location' value
 
-		// encodes location
+		/*
+			encodes location
+			everytime we want to update URL with a string, we encode it by taking invalid characters like spaces and codes it to something the browser knows how to use
+		*/
 		var encodedLocation = encodeURIComponent(location);
 
 		// if valid location
 		if(location.length > 0){
 			this.refs.search.value = ''; // clear fields value
 
-			// brings to homepage
+			// switching pages to homepage
 			window.location.hash = '#/?location=' + encodedLocation;
 		}
 	},
