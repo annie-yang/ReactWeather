@@ -5,16 +5,20 @@ var ReactDOMServer = require('react-dom/server');
 var ErrorModal = React.createClass({
 	getDefaultProps:function(){
 		return{
-			title: 'Error'
+			title: 'Error' // default title
 		};
 	},
+	// way to define which properties the components expects, whether it's a string, number, function, or whether it's required
 	propsTypes:{
 		title: React.PropTypes.string,
-		message: React.PropTypes.string.isRequired
+		message: React.PropTypes.string.isRequired // required
 	},
-	// gets called after the method is ever rendered
+	/*
+		gets called after the method is ever rendered
+		used to open modal
+	*/
 	componentDidMount:function(){
-		var{title, message} = this.props;
+		var{title, message} = this.props; // pull props off from 'this.props'
 
 		var modalMarkup = (
 			<div id="error-modal" className="reveal tiny text-center" data-reveal="">

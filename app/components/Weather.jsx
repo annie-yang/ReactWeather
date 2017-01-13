@@ -25,7 +25,7 @@ var Weather = React.createClass({
 			// takes objects of attributes we want to set
 			this.setState({
 				isLoading:true, // when someone starts search, loading is set to true
-				errorMessage: undefined,
+				errorMessage: undefined, // clears out any error messages from previous searches
 				// clears out location and temp to clean up data once search has been found
 				location: undefined,
 				temp: undefined
@@ -44,7 +44,7 @@ var Weather = React.createClass({
 			}, function (e){
 				that.setState({
 					isLoading: false, // sets to false once data has been fetched not successfully
-					errorMessage: e.message
+					errorMessage: e.message // find the message to display
 				});
 			});
 	},
@@ -83,9 +83,10 @@ var Weather = React.createClass({
 		}
 
 		function renderError(){
+			// if state is set a string
 			if(typeof errorMessage === 'string'){
 				return(
-					<ErrorModal message={errorMessage}/>
+					<ErrorModal message={errorMessage}/> // return instance of error modal
 				)
 			}
 		}

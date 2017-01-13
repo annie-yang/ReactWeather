@@ -6,6 +6,9 @@ var {Link} = require('react-router');
 /*
 	stateless function, since this simple component only renders to screen
 	only defines the render method and don't maintain any state
+
+	'/' visit homepage
+	'?' specify query parameter after '?'
 */
 var Examples = (props) => {
 	return(
